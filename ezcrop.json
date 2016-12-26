@@ -1,0 +1,34 @@
+{
+  "name": "ezcrop",
+  "title": "ezcrop",
+  "description": "Javascript image crop tool with zooming and rotating.",
+  "keywords": [
+    "image",
+    "edit",
+    "crop",
+    "zoom"
+  ],
+  "version": "0.0.1",
+  "author": {
+    "name": "Saranga Abeykoon",
+    "email": "amisaranga@gmail.com",
+    "url": "https://github.com/nterms"
+  },
+  "maintainers": [
+    {
+      "name": "Saranga Abeykoon",
+      "email": "amisaranga@gmail.com",
+      "url": "https://github.com/nterms"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "bugs": "https://github.com/nterms/ezcrop/issues",
+  "homepage": "https://github.com/nterms/ezcrop",
+  "docs": "https://github.com/nterms/ezcrop#readme",
+  "download": "https://github.com/nterms/ezcrop/archive/master.zip",
+  "dependencies": {}
+}

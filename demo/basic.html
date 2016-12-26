@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ezcrop</title>
+    <script src="../dist/ezcrop.js"></script>
+
+    <style>
+      .ezcrop-preview {
+        background-color: #f8f8f8;
+        background-size: cover;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-top: 7px;
+        width: 250px;
+        height: 250px;
+      }
+
+      .ezcrop-preview-image-container {
+        cursor: move;
+      }
+
+      .image-size-label {
+        margin-top: 10px;
+      }
+
+      input, .export {
+        display: block;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cropper" class="image-editor">
+      <input type="file" class="ezcrop-image-input">
+      <div class="ezcrop-preview"></div>
+      <div class="image-size-label">
+        Resize image
+      </div>
+      <input type="range" class="ezcrop-image-zoom-input">
+      <button id="rotate-ccw" class="rotate-ccw">Rotate counterclockwise</button>
+      <button id="rotate-cw" class="rotate-cw">Rotate clockwise</button>
+
+      <button id="export" class="export">Export</button>
+    </div>
+
+    <script>
+      (function() {
+        var cropper = new ezcrop(document.getElementById('cropper'), {
+          imageState: {
+            src: 'images/hands.jpg',
+          },
+        });
+
+        document.getElementById('rotate-ccw').addEventListener('click', function() {
+          cropper.rotateCCW();
+        });
+
+        document.getElementById('rotate-cw').addEventListener('click', function() {
+          cropper.rotateCW();
+        });
+
+        document.getElementById('export').addEventListener('click', function() {
+          var imageData = cropper.getCroppedImageData();
+          window.open(imageData);
+        });
+      })();
+    </script>
+  </body>
+</html>
