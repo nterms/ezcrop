@@ -1,4 +1,4 @@
-/*! ezcrop - v0.0.1 <https://github.com/nterms/ezcrop> */
+/*! ezcrop - v0.0.2 <https://github.com/nterms/ezcrop> */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();

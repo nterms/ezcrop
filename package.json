@@ -2,7 +2,7 @@
   "name": "ezcrop",
   "main": "dist/ezcrop.js",
   "description": "Javascript image crop tool with zooming and rotating.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Saranga Abeykoon",
     "email": "amisaranga@gmail.com",
@@ -46,8 +46,7 @@
       "fs"
     ]
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "~5.5.8",
     "babel-jest": "~5.3.0",
