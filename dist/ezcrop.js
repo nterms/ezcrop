@@ -974,8 +974,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    description: 'Range input element that controls image zoom.',
 	    defaultSelector: 'input.' + _constants.CLASS_NAMES.ZOOM_SLIDER
 	  }].map(function (o) {
-	    o.type = 'jQuery element';
-	    o['default'] = '$imageCropper.find(\'' + o.defaultSelector + '\')';
+	    o.type = 'element';
+	    o['default'] = 'imageCropper.querySelectorAll(\'' + o.defaultSelector + '\')[0]';
 	    return o;
 	  }),
 

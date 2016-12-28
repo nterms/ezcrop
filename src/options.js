@@ -18,8 +18,8 @@ const options = {
       defaultSelector: `input.${CLASS_NAMES.ZOOM_SLIDER}`,
     },
   ].map((o) => {
-    o.type = 'jQuery element';
-    o.default = `$imageCropper.find('${o.defaultSelector}')`;
+    o.type = 'element';
+    o.default = `imageCropper.querySelectorAll('${o.defaultSelector}')[0]`;
     return o;
   }),
 
