@@ -167,7 +167,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.loadImage(this.options.imageState.src);
 	      }
 
-	      this.el.setAttribute('data-ezcrop', this);
+	      this.el.ezcrop = this;
 	    }
 	  }, {
 	    key: 'bindListeners',

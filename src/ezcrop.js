@@ -89,7 +89,7 @@ class Ezcrop {
       this.loadImage(this.options.imageState.src);
     }
 
-    this.el.setAttribute('data-ezcrop', this);
+    this.el.ezcrop = this;
   }
 
   bindListeners() {
