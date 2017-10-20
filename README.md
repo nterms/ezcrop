@@ -23,6 +23,8 @@ $ bower install ezcrop
 
 # or with npm
 $ npm install ezcrop
+
+# or just download [this file](dist/ezcrop.js) and use it as you wish
 ```
 
 
@@ -92,6 +94,7 @@ Following options are supported:
 | imageBackground | boolean | Whether or not to display the background image beyond the preview area. | false |
 | imageBackgroundBorderWidth | array or number | Width of background image border in pixels.,The four array elements specify the width of background image width on the top, right, bottom, left side respectively.,The background image beyond the width will be hidden.,If specified as a number, border with uniform width on all sides will be applied. | [0, 0, 0, 0] |
 | exportZoom | number | The ratio between the desired image size to export and the preview size.,For example, if the preview size is `300px * 200px`, and `exportZoom = 2`, then,the exported image size will be `600px * 400px`.,This also affects the maximum zoom level, since the exported image cannot be zoomed to larger than its original size. | 1 |
+| exportWidth | number | Fixed width of exported image in pixels. This is useful for calculating of dynamic `exportZoom` for responsive designs. | null |
 | allowDragNDrop | boolean | When set to true, you can load an image by dragging it from local file browser onto the preview area. | true |
 | minZoom | string | This options decides the minimal zoom level of the image.,If set to `'fill'`, the image has to fill the preview area, i.e. both width and height must not go smaller than the preview area.,If set to `'fit'`, the image can shrink further to fit the preview area, i.e. at least one of its edges must not go smaller than the preview area. | fill |
 | maxZoom | number | Determines how big the image can be zoomed. E.g. if set to 1.5, the image can be zoomed to 150% of its original size. | 1 |
@@ -119,7 +122,7 @@ Following callbacks can be used to interact with `ezcrop`.
 
 ## Development
 
-* Build: `webpack`
+* Build: `npm run build`
   * Watch for changes and rebuild: `webpack -w`
 * Test: `npm test`
   * Test specific file: `jest <filename>`

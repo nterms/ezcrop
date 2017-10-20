@@ -2,7 +2,7 @@
   "name": "ezcrop",
   "main": "dist/ezcrop.js",
   "description": "Javascript image crop tool with zooming and rotating.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "Saranga Abeykoon",
     "email": "amisaranga@gmail.com",
@@ -25,7 +25,8 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "jshint": "jshint src test --reporter=node_modules/jshint-stylish"
+    "jshint": "jshint src test --reporter=node_modules/jshint-stylish",
+    "build": "webpack --optimize-minimize"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
