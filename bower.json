@@ -1,7 +1,7 @@
 {
   "name": "ezcrop",
   "description": "Javascript image crop tool with zooming and rotating.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "authors": [
     "Saranga Abeykoon <amisaranga@gmail.com>"
   ],

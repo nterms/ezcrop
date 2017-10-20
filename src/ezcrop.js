@@ -24,7 +24,7 @@ class Ezcrop {
 
     this.preview = this.options.preview;
     this.fileInput = this.options.fileInput;
-    this.zoomSlider = this.options.zoomSlider
+    this.zoomSlider = this.options.zoomSlider;
 
     this.preview.style.position = 'relative';
     this.fileInput.setAttribute('accept', 'image/*');
@@ -117,6 +117,16 @@ class Ezcrop {
       this.loadFile(this.fileInput.files[0]);
     }
   }
+  
+  calculateExportZoom() {
+    let exportZoom = this.options.exportZoom;
+    
+    if (this.options.exportWidth && this.options.exportWidth >= this.previewSize.width) {
+      exportZoom = this.options.exportWidth / this.previewSize.width;
+    }
+    
+    return exportZoom;
+  }
 
   loadFile(file) {
     const fileReader = new FileReader();
@@ -193,7 +203,7 @@ class Ezcrop {
       imageHeight: this.preImage.height,
       previewSize: this.previewSize,
       maxZoom: this.options.maxZoom,
-      exportZoom: this.options.exportZoom,
+      exportZoom: this.calculateExportZoom(),
       smallImage: this.options.smallImage,
     })) {
       this.onImageError(ERRORS.SMALL_IMAGE);
@@ -362,7 +372,7 @@ class Ezcrop {
     this.zoomer.setup({
       imageSize: this.imageSize,
       previewSize: this.previewSize,
-      exportZoom: this.options.exportZoom,
+      exportZoom: this.calculateExportZoom(),
       maxZoom: this.options.maxZoom,
       minZoom: this.options.minZoom,
       smallImage: this.options.smallImage,
@@ -452,7 +462,7 @@ class Ezcrop {
       imageHeight: this.img.width,
       previewSize: this.previewSize,
       maxZoom: this.options.maxZoom,
-      exportZoom: this.options.exportZoom,
+      exportZoom: this.calculateExportZoom(),
       smallImage: this.options.smallImage,
     })) {
       this.rotation = (this.rotation + 180) % 360;
@@ -468,7 +478,7 @@ class Ezcrop {
       imageHeight: this.img.width,
       previewSize: this.previewSize,
       maxZoom: this.options.maxZoom,
-      exportZoom: this.options.exportZoom,
+      exportZoom: this.calculateExportZoom(),
       smallImage: this.options.smallImage,
     })) {
       this.rotation = (this.rotation + 180) % 360;
@@ -496,7 +506,7 @@ class Ezcrop {
     };
     exportOptions = extend({}, exportDefaults, exportOptions);
 
-    const exportZoom = exportOptions.originalSize ? 1 / this.zoom : this.options.exportZoom;
+    const exportZoom = exportOptions.originalSize ? 1 / this.zoom : this.calculateExportZoom();
 
     const zoomedSize = {
       width: this.zoom * exportZoom * this.img.width,
@@ -584,6 +594,10 @@ class Ezcrop {
 
   get exportZoom() {
     return this.options.exportZoom;
+  }
+
+  get calculatedExportZoom() {
+    return this.calculateExportZoom();
   }
 
   set exportZoom(exportZoom) {

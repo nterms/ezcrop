@@ -8,7 +8,7 @@
     "crop",
     "zoom"
   ],
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "Saranga Abeykoon",
     "email": "amisaranga@gmail.com",
@@ -19,6 +19,11 @@
       "name": "Saranga Abeykoon",
       "email": "amisaranga@gmail.com",
       "url": "https://github.com/nterms"
+    },
+    {
+      "name": "Zdenek Hofler",
+      "email": "zdenek.hofler@gmail.com",
+      "url": "https://github.com/noo-zh"
     }
   ],
   "licenses": [
